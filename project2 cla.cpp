@@ -3,7 +3,9 @@ using namespace std;
 int main(){
 	int num1,num2;
 	int ch;
-	cout<<"***** Welcome to Calculator *****";
+	char repeat;
+	cout<<"******** Welcome to Calculator ********";
+	do{
 	cout<<"\nEnter the 1st number:";
 	cin>>num1;
 	cout<<"\nEnter the 2rd number:";
@@ -29,11 +31,19 @@ int main(){
 			cout<<num1*num2;
 			break;
 		case 4:
-			if(num2!=0)
+			if(num2 ==0){
+				cout<<"Error: Cannot Divided it!";
+			}
+			else{
 			cout<<"Result :";
 			cout<<num1/num2;
+		}
 			break;
 		default:
 			cout<<"Please check the choice correctly!";
 	}
+	cout<<"\nWould you like to perform another calculation? (y|n):";
+	cin>> repeat;
+}while( repeat == 'y'|| repeat == 'Y');
+cout<<"****** Thank you for using the calculator ******\n";
 }
